@@ -1,0 +1,12 @@
+.hero-slider {
+}
+
+.hero-slider-item {
+  height: 280px;
+}
+
+.hero-slider-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
