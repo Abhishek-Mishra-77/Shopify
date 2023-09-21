@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Loader.css'
 import SyncLoader from "react-spinners/SyncLoader";
 
 
 const Loader = () => {
 
-    let [loading, setLoading] = useState(true);
+    let loading = true
 
 
 

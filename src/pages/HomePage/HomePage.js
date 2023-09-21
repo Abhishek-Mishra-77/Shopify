@@ -24,7 +24,8 @@ const HomePage = () => {
         dispatch(fetchCategories());
         dispatch(fetchProductByCategory(1, 'all'))
         dispatch(fetchProductByCategory(2, 'all'))
-    }, [])
+    }, [dispatch])
+
 
     return (
         <div className='home-page'>

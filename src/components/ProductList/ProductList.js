@@ -26,15 +26,15 @@ const ProductList = ({ products, status }) => {
     }
 
 
+    
+
+
     return (
         <Fragment>
             <div className='product py-5 bg-ghost-white' id='products'>
                 {isModalVisible && <SingleProduct />}
                 <div className='container'>
                     <div className='product-content'>
-                        <div className='section-title'>
-                            <h3 className='text-uppercase fw-7 text-regal-blue ls-1'></h3>
-                        </div>
                         <div className='product-items grid'>
                             {products.map((product) => (
                                 <div className='product-item bg-white category-slide' key={product.id}

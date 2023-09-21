@@ -14,12 +14,10 @@ const Navbar = () => {
   const { totalItems } = useSelector(state => state.cart);
 
 
-
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(getCartTotal())
   }, [dispatch])
-
 
 
   return (

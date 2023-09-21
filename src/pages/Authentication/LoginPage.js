@@ -96,7 +96,7 @@ const LoginPage = () => {
                     </div>
                     <div className='linkss'>
                         <Link to={'/forget'} >Forgot Password</Link>
-                        <a onClick={onLoginhandler} href='#'>{!isLogin ? 'Login' : 'Signup'}</a>
+                        <button onClick={onLoginhandler} >{!isLogin ? 'Login' : 'Signup'}</button>
                     </div>
                     <div>
                         {isLogin && <input type='button' onClick={onLogoutHandler} style={{ float: 'right', background: 'red' }} value="Logout" />}
