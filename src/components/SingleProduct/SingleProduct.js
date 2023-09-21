@@ -55,8 +55,8 @@ const SingleProduct = () => {
                     onClick={() => dispatch(setIsModalVisible(false))}>
                     <i className='fas fa-times'></i>
                 </button>
-                <div className='details-content grid'>
-                    <div className='details-left'>
+                <div className='details-content'>
+                    <div className='details-left mr-10'>
                         <div className='details-img'>
                             <img src={product.images[0]} alt={product.title} />
                         </div>

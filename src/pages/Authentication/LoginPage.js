@@ -10,6 +10,8 @@ const LoginPage = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const tokenId = localStorage.getItem('token')
+
     const onAuthenticationHandler = async (e) => {
         e.preventDefault();
 
@@ -99,7 +101,7 @@ const LoginPage = () => {
                         <button onClick={onLoginhandler} >{!isLogin ? 'Login' : 'Signup'}</button>
                     </div>
                     <div>
-                        {isLogin && <input type='button' onClick={onLogoutHandler} style={{ float: 'right', background: 'red' }} value="Logout" />}
+                        {tokenId && <input type='button' onClick={onLogoutHandler} style={{ float: 'right', background: 'red' }} value="Logout" />}
                         <input type='submit' style={{ float: 'left' }} value={`${isLogin ? 'Login' : 'Sign up'}`} />
                     </div>
                 </form>

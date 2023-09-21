@@ -209,6 +209,10 @@ select {
   margin-top: 20px;
 }
 
+.mr-10 {
+  margin-right: 22px;
+}
+
 .bg-white {
   background-color: #fff;
 }
