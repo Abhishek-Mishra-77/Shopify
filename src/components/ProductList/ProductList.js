@@ -27,7 +27,7 @@ const ProductList = ({ products, status }) => {
 
 
     return (
-        <div className='product py-5 bg-ghost-white' id='products'>
+        <> <div className='product py-5 bg-ghost-white' id='products'>
             {isModalVisible && <SingleProduct />}
 
             <div className='container'>
@@ -37,7 +37,7 @@ const ProductList = ({ products, status }) => {
                     </div>
                     <div className='product-items grid'>
                         {products.map((product) => (
-                            <div className='product-item bg-white' key={product.id}
+                            <div className='product-item bg-white category-slide' key={product.id}
                                 onClick={() => viewModalHandler(product)}>
                                 <div className='product-item-img'>
                                     <img src={product.images[0]} alt='' />
@@ -56,7 +56,7 @@ const ProductList = ({ products, status }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div></>
     )
 }
 

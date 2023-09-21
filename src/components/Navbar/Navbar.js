@@ -3,6 +3,7 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCategories } from '../../store/categorySlice';
+import { getCartTotal } from '../../store/cartSlice';
 
 
 
@@ -10,10 +11,16 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const { data: categories } = useSelector((state) => state.category)
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { totalItems } = useSelector(state => state.cart);
+
+
 
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(getCartTotal())
   }, [])
+
+
 
   return (
     <nav className='navbar'>
@@ -22,7 +29,7 @@ const Navbar = () => {
           <div className='navbar-top flex flex-between'>
             <Link to={'/'} className='navbar-brand'>
               <span className='text-regal-blue'>Shopify</span>
-              <span className='text-gold'>Hub.</span>
+              <span className='text-gold'>Club.</span>
             </Link>
 
             <form className='navbar-search flex'>
@@ -31,14 +38,38 @@ const Navbar = () => {
                 <i className='fas fa-search'></i>
               </button>
             </form>
-
-            <div className='navbar-btns'>
+            {/* <div className='navbar-btns'>
               <Link to={'/cart'} className='add-to-cart-btn flex'>
                 <span className='btn-ico'>
                   <i className='fas fa-shopping-cart'></i>
                 </span>
-                <div className='btn-text fw-5'>Cart <span className='cart-count-value'>0</span></div>
+                <div className='btn-text fw-5'>Cart <span className='cart-count-value'>{totalItems}</span></div>
               </Link>
+            </div> */}
+
+            <div className='navbar-botton'>
+              <ul className='nav-l flex' >
+                <li >
+                  <div className='navbar-btns'>
+                    <Link to={'/cart'} className='add-to-cart-btn flex'>
+                      <span className='btn-ico'>
+                        <i className='fas fa-shopping-cart'></i>
+                      </span>
+                      <div className='btn-text fw-5'>Cart <span className='cart-count-value'>{totalItems}</span></div>
+                    </Link>
+                  </div>
+                </li>
+                <li >
+                  <div className='navbar-btns'>
+                    <Link to={'/auth'} className='add-to-cart-btn flex'>
+                      <span className='btn-ico'>
+                        <i className='fa fa-sign-in'></i>
+                      </span>
+                      <div className='btn-text fw-5'>Login<span className='cart-acount'></span></div>
+                    </Link>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -70,7 +101,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </nav >
   )
 }
 

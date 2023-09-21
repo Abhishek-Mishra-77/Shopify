@@ -16,7 +16,6 @@ const Category = ({ categories, status }) => {
     }
 
 
-    console.log(categories)
 
     return (
         <section className='categories py-5 bg-ghost-white' id='categories'>
@@ -30,6 +29,7 @@ const Category = ({ categories, status }) => {
                             <Link
                                 to={`catogory/${category.id}`}
                                 key={category.id}
+                                className='category-slide'
                             >
                                 <div className='category-item'>
                                     <div className='category-item-img'>
