@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(getCartTotal())
-  }, [])
+  }, [dispatch])
 
 
 

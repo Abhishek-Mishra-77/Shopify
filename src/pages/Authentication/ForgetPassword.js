@@ -24,7 +24,7 @@ const ForgetPassword = () => {
                 })
             })
             if (response.ok) {
-                const data = await response.json();
+                // const data = await response.json();
                 alert('Please kindly check your email!')
             }
             else {

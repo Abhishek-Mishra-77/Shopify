@@ -95,7 +95,7 @@ const LoginPage = () => {
                         <i></i>
                     </div>
                     <div className='linkss'>
-                        <Link to={'/forget'} href='#'>Forgot Password</Link>
+                        <Link to={'/forget'} >Forgot Password</Link>
                         <a onClick={onLoginhandler} href='#'>{!isLogin ? 'Login' : 'Signup'}</a>
                     </div>
                     <div>
